@@ -1266,13 +1266,13 @@
      * Enable DISABLE_IDLE_* to shut down axis steppers after an idle period.
      * The default timeout duration can be overridden with M18 and M84. Set to 0 for No Timeout.
      */
-    #define DEFAULT_STEPPER_TIMEOUT_SEC 120
+    #define DEFAULT_STEPPER_TIMEOUT_SEC 0
     #define DISABLE_IDLE_X
     #define DISABLE_IDLE_Y
     #define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
-    //#define DISABLE_IDLE_I
-    //#define DISABLE_IDLE_J
-    //#define DISABLE_IDLE_K
+    #define DISABLE_IDLE_I
+    #define DISABLE_IDLE_J
+    #define DISABLE_IDLE_K
     //#define DISABLE_IDLE_U
     //#define DISABLE_IDLE_V
     //#define DISABLE_IDLE_W
@@ -3076,8 +3076,8 @@
       #endif
      
       #if AXIS_IS_TMC_CONFIG(Y)
-        #define Y_CURRENT       1000
-        #define Y_CURRENT_HOME  800
+        #define Y_CURRENT       1500
+        #define Y_CURRENT_HOME  1000
         #define Y_MICROSTEPS     32
         #define Y_RSENSE          0.11
         #define Y_CHAIN_POS      -1
@@ -3096,8 +3096,8 @@
       #endif
      
       #if AXIS_IS_TMC_CONFIG(Z)
-        #define Z_CURRENT       1800
-        #define Z_CURRENT_HOME  1500
+        #define Z_CURRENT       900
+        #define Z_CURRENT_HOME  800
         #define Z_MICROSTEPS     32
         #define Z_RSENSE          0.11
         #define Z_CHAIN_POS      -1
@@ -3136,8 +3136,8 @@
       #endif
      
       #if AXIS_IS_TMC_CONFIG(I)
-        #define I_CURRENT      1000
-        #define I_CURRENT_HOME 800
+        #define I_CURRENT      1200
+        #define I_CURRENT_HOME 1000
         #define I_MICROSTEPS    32
         #define I_RSENSE         0.11
         #define I_CHAIN_POS     -1
@@ -3146,12 +3146,12 @@
       #endif
      
       #if AXIS_IS_TMC_CONFIG(J)
-        #define J_CURRENT      800
-        #define J_CURRENT_HOME J_CURRENT
+        #define J_CURRENT      1300
+        #define J_CURRENT_HOME 1000
         #define J_MICROSTEPS    32
         #define J_RSENSE         0.11
         #define J_CHAIN_POS     -1
-        //#define J_INTERPOLATE  true
+        //#define J_INTERPOLATE  trueK_S
         //#define J_HOLD_MULTIPLIER 0.5
       #endif
      
@@ -3376,7 +3376,7 @@
         #define STEALTHCHOP_U
         #define STEALTHCHOP_V
         #define STEALTHCHOP_W
-        #define STEALTHCHOP_E
+        #define STEALTHCHOP_E 
       // #endif
      
       /**
@@ -3504,17 +3504,17 @@
      
       #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
         // TMC2209: 0...255. TMC2130: -64...63
-        #define X_STALL_SENSITIVITY  70
+        #define X_STALL_SENSITIVITY  40
         #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-        #define Y_STALL_SENSITIVITY  100
+        #define Y_STALL_SENSITIVITY  115
         #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
-        #define Z_STALL_SENSITIVITY  130
+        // #define Z_STALL_SENSITIVITY  130
         //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
         //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
         //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY
-        #define I_STALL_SENSITIVITY  130
-        #define J_STALL_SENSITIVITY  80
-        #define K_STALL_SENSITIVITY  80
+        #define I_STALL_SENSITIVITY  140
+        #define J_STALL_SENSITIVITY  32
+        // #define K_STALL_SENSITIVITY  80
         //#define U_STALL_SENSITIVITY  8
         //#define V_STALL_SENSITIVITY  8
         //#define W_STALL_SENSITIVITY  8
@@ -4688,12 +4688,12 @@
     //
     // M42 - Set pin states
     //
-    //#define DIRECT_PIN_CONTROL
+    #define DIRECT_PIN_CONTROL
      
     //
     // M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
     //
-    //#define PINS_DEBUGGING
+    #define PINS_DEBUGGING
      
     // Enable Tests that will run at startup and produce a report
     //#define MARLIN_TEST_BUILD

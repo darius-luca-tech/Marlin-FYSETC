@@ -53,8 +53,8 @@
     // #define USE_XMAX_PLUG
      
     #define I_STOP_PIN Z_MAX_PIN
-    #define J_STOP_PIN Y_MIN_PIN
-    #define K_STOP_PIN X_MIN_PIN
+    #define J_STOP_PIN Y_MAX_PIN
+    #define K_STOP_PIN X_MAX_PIN
      
     // #define I_MIN_PIN 12
     // #define J_MIN_PIN 15
@@ -1221,7 +1221,7 @@
       //#define ENDSTOPPULLUP_VMIN
       //#define ENDSTOPPULLUP_WMIN
       //#define ENDSTOPPULLUP_XMAX
-      //#define ENDSTOPPULLUP_YMAX
+      // #define ENDSTOPPULLUP_YMAX
       //#define ENDSTOPPULLUP_ZMAX
       //#define ENDSTOPPULLUP_IMAX
       //#define ENDSTOPPULLUP_JMAX
@@ -1241,12 +1241,12 @@
       //#define ENDSTOPPULLDOWN_ZMIN
       //#define ENDSTOPPULLDOWN_IMIN
       //#define ENDSTOPPULLDOWN_JMIN
-      //#define ENDSTOPPULLDOWN_KMIN
+      // #define ENDSTOPPULLDOWN_KMIN
       //#define ENDSTOPPULLDOWN_UMIN
       //#define ENDSTOPPULLDOWN_VMIN
       //#define ENDSTOPPULLDOWN_WMIN
       //#define ENDSTOPPULLDOWN_XMAX
-      //#define ENDSTOPPULLDOWN_YMAX
+      // #define ENDSTOPPULLDOWN_YMAX
       //#define ENDSTOPPULLDOWN_ZMAX
       //#define ENDSTOPPULLDOWN_IMAX
       //#define ENDSTOPPULLDOWN_JMAX
@@ -1329,7 +1329,8 @@
      * 321.69
      */
     // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 113.7778, 355.56, 321.69, 71.11, 71.11, 71.11}
-    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 113.7778, 355.56, 321.69, 321.69, 71.11, 71.11}
+    //                                        X(J1)    Y(J2)   Z(J6)   A(J3)   B(J4)  C(J5) 
+    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 113.7778, 355.55, 177.77, 321.69, 71.11, 71.11}
      
     /**
      * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1937,10 +1938,10 @@
     #define Y_BED_SIZE 200
      
     // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-    #define X_MIN_POS 0
+    #define X_MIN_POS -170
     #define Y_MIN_POS 0
     #define Z_MIN_POS 0
-    #define X_MAX_POS 300
+    #define X_MAX_POS 90
     #define Y_MAX_POS 300
     #define Z_MAX_POS 300
     #define I_MIN_POS 0
@@ -2378,11 +2379,11 @@
     // Manually set the home position. Leave these undefined for automatic settings.
     // For DELTA this is the top-center of the Cartesian print volume.
     #define MANUAL_X_HOME_POS -170
-    #define MANUAL_Y_HOME_POS 20
-    #define MANUAL_Z_HOME_POS 0
-    #define MANUAL_I_HOME_POS 0
-    #define MANUAL_J_HOME_POS 0
-    #define MANUAL_K_HOME_POS 0
+    #define MANUAL_Y_HOME_POS -140
+    #define MANUAL_Z_HOME_POS 2
+    #define MANUAL_I_HOME_POS 110
+    #define MANUAL_J_HOME_POS -130
+    #define MANUAL_K_HOME_POS -142
     //#define MANUAL_U_HOME_POS 0
     //#define MANUAL_V_HOME_POS 0
     //#define MANUAL_W_HOME_POS 0
@@ -2405,7 +2406,7 @@
     // Homing speeds (linear=mm/min, rotational=°/min)
     // #define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (30*60), (30*60), (30*60), (30*60) }
      
-    #define HOMING_FEEDRATE_MM_M { (30*60), (20*60), (30*60), (30*60), (30*60), (30*60) }
+    #define HOMING_FEEDRATE_MM_M { (30*60), (20*60), (30*60), (30*60), (50*60), (30*60) }
      
     // Edit homing feedrates with M210 and MarlinUI menu items
     //#define EDITABLE_HOMING_FEEDRATE
@@ -3746,7 +3747,7 @@
      * Set this manually if there are extra servos needing manual control.
      * Set to 0 to turn off servo support.
      */
-    //#define NUM_SERVOS 3 // Note: Servo index starts with 0 for M280-M282 commands
+    #define NUM_SERVOS 1 // Note: Servo index starts with 0 for M280-M282 commands
      
     // (ms) Delay before the next move will start, to give the servo time to reach its target angle.
     // 300ms is a good value but you can try less delay.
