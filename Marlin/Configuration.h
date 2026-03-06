@@ -1935,21 +1935,21 @@
      
     // The size of the printable area
     #define X_BED_SIZE 200
-    #define Y_BED_SIZE 200
+    #define Y_BED_SIZE 200\
      
     // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
     #define X_MIN_POS -170
-    #define Y_MIN_POS 0
-    #define Z_MIN_POS 0
+    #define Y_MIN_POS -140
+    #define Z_MIN_POS -90
     #define X_MAX_POS 90
-    #define Y_MAX_POS 300
-    #define Z_MAX_POS 300
-    #define I_MIN_POS 0
-    #define I_MAX_POS 100
-    #define J_MIN_POS 0
-    #define J_MAX_POS 100
-    #define K_MIN_POS 0
-    #define K_MAX_POS 100
+    #define Y_MAX_POS -60
+    #define Z_MAX_POS 90
+    #define I_MIN_POS 0 //TODO: Need to be changed
+    #define I_MAX_POS 100 //TODO: Need to be changed
+    #define J_MIN_POS 0 //TODO: Need to be changed
+    #define J_MAX_POS 100 //TODO: Need to be changed
+    #define K_MIN_POS 0 //TODO: Need to be changed
+    #define K_MAX_POS 100 //TODO: Need to be changed
     //#define U_MIN_POS 0
     //#define U_MAX_POS 50
     //#define V_MIN_POS 0
