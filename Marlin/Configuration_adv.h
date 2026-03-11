@@ -3504,16 +3504,16 @@
      
       #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
         // TMC2209: 0...255. TMC2130: -64...63
-        #define X_STALL_SENSITIVITY  40
+        #define X_STALL_SENSITIVITY  50
         #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-        #define Y_STALL_SENSITIVITY  115
+        #define Y_STALL_SENSITIVITY  113
         #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
         // #define Z_STALL_SENSITIVITY  130
         //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
         //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
         //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY
-        #define I_STALL_SENSITIVITY  140
-        #define J_STALL_SENSITIVITY  32
+        #define I_STALL_SENSITIVITY  145
+        #define J_STALL_SENSITIVITY  45
         // #define K_STALL_SENSITIVITY  80
         //#define U_STALL_SENSITIVITY  8
         //#define V_STALL_SENSITIVITY  8
@@ -4727,4 +4727,3 @@
      
     // Shrink the build for smaller boards by sacrificing some serial feedback
     //#define MARLIN_SMALL_BUILD
-

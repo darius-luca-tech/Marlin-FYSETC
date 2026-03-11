@@ -1,5 +1,3 @@
-
-
     /**
      * Marlin 3D Printer Firmware
      * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
@@ -1899,7 +1897,7 @@
     #define Z_CLEARANCE_FOR_HOMING  0   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                           // You'll need this much clearance above Z_MAX_POS to avoid grinding.
      
-    //#define Z_AFTER_HOMING         10   // (mm) Height to move to after homing (if Z was homed)
+    #define Z_AFTER_HOMING         180   // (mm) Height to move to after homing (if Z was homed)
     //#define XY_AFTER_HOMING { 10, 10 }  // (mm) Move to an XY position after homing (and raising Z)
      
     //#define EVENT_GCODE_AFTER_HOMING "M300 P440 S200"  // Commands to run after G28 (and move to XY_AFTER_HOMING)
@@ -1935,21 +1933,21 @@
      
     // The size of the printable area
     #define X_BED_SIZE 200
-    #define Y_BED_SIZE 200\
+    #define Y_BED_SIZE 200
      
     // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
     #define X_MIN_POS -170
-    #define Y_MIN_POS -140
-    #define Z_MIN_POS -90
+    #define Y_MIN_POS 0
+    #define Z_MIN_POS 0
     #define X_MAX_POS 90
-    #define Y_MAX_POS -60
-    #define Z_MAX_POS 90
-    #define I_MIN_POS 0 //TODO: Need to be changed
-    #define I_MAX_POS 100 //TODO: Need to be changed
-    #define J_MIN_POS 0 //TODO: Need to be changed
-    #define J_MAX_POS 100 //TODO: Need to be changed
-    #define K_MIN_POS 0 //TODO: Need to be changed
-    #define K_MAX_POS 100 //TODO: Need to be changed
+    #define Y_MAX_POS 300
+    #define Z_MAX_POS 270
+    #define I_MIN_POS 0
+    #define I_MAX_POS 100
+    #define J_MIN_POS 0
+    #define J_MAX_POS 100
+    #define K_MIN_POS 0
+    #define K_MAX_POS 100
     //#define U_MIN_POS 0
     //#define U_MAX_POS 50
     //#define V_MIN_POS 0
@@ -2380,7 +2378,7 @@
     // For DELTA this is the top-center of the Cartesian print volume.
     #define MANUAL_X_HOME_POS -170
     #define MANUAL_Y_HOME_POS -140
-    #define MANUAL_Z_HOME_POS 2
+    #define MANUAL_Z_HOME_POS 184
     #define MANUAL_I_HOME_POS 110
     #define MANUAL_J_HOME_POS -130
     #define MANUAL_K_HOME_POS -142
@@ -3762,4 +3760,3 @@
      
     // Disable servo with M282 to reduce power consumption, noise, and heat when not in use
     //#define SERVO_DETACH_GCODE
-
