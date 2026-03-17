@@ -2543,7 +2543,8 @@ void prepare_line_to_destination() {
     //
     // Fast move towards endstop until triggered
     //
-    const float move_length = 1.5f * max_length(TERN(DELTA, Z_AXIS, axis)) * axis_home_dir;
+    const float move_length = 1.5f * max_length(TERN(DELTA, Z_AXIS, axis)) * axis_home_dir
+                              * (axis == Z_AXIS && INVERT_Z_DIR ? -1.0f : 1.0f);
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("Home Fast: ", move_length, "mm");
     do_homing_move(axis, move_length, 0.0, !use_probe_bump);
 

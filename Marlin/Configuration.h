@@ -1856,7 +1856,7 @@
      
     //#define DISABLE_E               // Disable the extruder when not stepping
     #define DISABLE_OTHER_EXTRUDERS   // Keep only the active extruder enabled
-     
+  
     // @section motion
      
     // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
@@ -1897,7 +1897,7 @@
     #define Z_CLEARANCE_FOR_HOMING  0   // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                           // You'll need this much clearance above Z_MAX_POS to avoid grinding.
      
-    #define Z_AFTER_HOMING         180   // (mm) Height to move to after homing (if Z was homed)
+    #define Z_AFTER_HOMING         180 // (mm) Height to move to after homing (if Z was homed)
     //#define XY_AFTER_HOMING { 10, 10 }  // (mm) Move to an XY position after homing (and raising Z)
      
     //#define EVENT_GCODE_AFTER_HOMING "M300 P440 S200"  // Commands to run after G28 (and move to XY_AFTER_HOMING)
@@ -1977,7 +1977,8 @@
       #define MIN_SOFTWARE_ENDSTOP_V
       #define MIN_SOFTWARE_ENDSTOP_W
     #endif
-     
+    
+    #define ALLOW_Z_AFTER_HOMING
     // Max software endstops constrain movement within maximum coordinate bounds
     //#define MAX_SOFTWARE_ENDSTOPS
     #if ENABLED(MAX_SOFTWARE_ENDSTOPS)
@@ -2378,8 +2379,8 @@
     // For DELTA this is the top-center of the Cartesian print volume.
     #define MANUAL_X_HOME_POS -170
     #define MANUAL_Y_HOME_POS -140
-    #define MANUAL_Z_HOME_POS 184
-    #define MANUAL_I_HOME_POS 110
+    #define MANUAL_Z_HOME_POS 175
+    #define MANUAL_I_HOME_POS 113
     #define MANUAL_J_HOME_POS -130
     #define MANUAL_K_HOME_POS -142
     //#define MANUAL_U_HOME_POS 0

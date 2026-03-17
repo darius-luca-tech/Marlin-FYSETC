@@ -754,7 +754,7 @@ void Endstops::update() {
   #if HAS_Z_AXIS
     if (AXIS_IS_MOVING(Z)) {
       const AxisEnum z_head = TERN0(FT_MOTION, ftMotion.cfg.active) ? Z_AXIS : Z_AXIS_HEAD;
-      if (AXIS_DIR_REV(z_head)) {
+      if (AXIS_DIR_REV(z_head) ^ (bool)INVERT_Z_DIR) {
         // Z- : Gantry down, bed up
         #if HAS_Z_MIN_STATE
           // If the Z_MIN_PIN is being used for the probe there's no
